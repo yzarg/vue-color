@@ -1,75 +1,16 @@
 <template>
   <div id="app">
-    <a class="github-fork-ribbon" href="https://github.com/xiaokaike/vue-color" title="Fork me on GitHub">Fork me on GitHub</a>
-    <div class="header-container">
-      <div class="header-bg" :style="{'background-color': bgc}"></div>
-      <div class="header">
-        <div class="intro-wrap">
-          <div class="intro">
-            <h1>Vue-color</h1>
-            <p role="presentation">A Collection of Color Pickers from Sketch, Photoshop, Chrome, Github, Twitter, Material Design & more</p>
-          </div>
-        </div>
-        <div class="demo-item">
-          <chrome-picker :value="colors" @input="updateValue"></chrome-picker>
-          <h2>Chrome</h2>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-container">
-      <div class="demo-list">
-        <div class="demo-item">
-          <sketch-picker v-model="colors"></sketch-picker>
-          <h2>Sketch</h2>
-        </div>
-        <div class="demo-item">
-          <photoshop-picker v-model="colors" @ok="onOk" @cancel="onCancel"></photoshop-picker>
-          <h2>Photoshop</h2>
-        </div>
-      </div>
-      <div class="demo-list">
-        <div class="demo-item">
-          <material-picker v-model="colors"></material-picker>
-          <h2>Material</h2>
-        </div>
-        <div class="demo-item">
-          <slider-picker v-model="colors"></slider-picker>
-          <h2>Slider</h2>
-        </div>
-      </div>
-      <div class="demo-list">
-        <div class="demo-item">
-          <compact-picker v-model="colors"></compact-picker>
-          <h2>Compact</h2>
-          <br>
-          <br>
-          <grayscale-picker :value="colors" @input="updateValue"></grayscale-picker>
-          <h2>Grayscale</h2>
-        </div>
-        <div class="demo-item">
-          <swatches-picker v-model="colors"></swatches-picker>
-          <h2>Swatches</h2>
-        </div>
-      </div>
-
-
+    <div class="demo-item">
+      <chrome-picker :value="colors" @input="updateValue"></chrome-picker>
     </div>
   </div>
 </template>
 
 <script>
-import material from '../src/components/Material.vue'
-import compact from '../src/components/Compact.vue'
-import grayscale from '../src/components/Grayscale.vue'
-import swatches from '../src/components/Swatches.vue'
-import slider from '../src/components/Slider.vue'
-import sketch from '../src/components/Sketch.vue'
-import chrome from '../src/components/Chrome.vue'
-import photoshop from '../src/components/Photoshop.vue'
+import chrome from "../src/components/Chrome.vue";
 
 let defaultProps = {
-  hex: '#194d33e6',
+  hex: "#194d33e6",
   hsl: {
     h: 150,
     s: 0.5,
@@ -79,7 +20,7 @@ let defaultProps = {
   hsv: {
     h: 150,
     s: 0.66,
-    v: 0.30,
+    v: 0.3,
     a: 0.9
   },
   rgba: {
@@ -89,43 +30,42 @@ let defaultProps = {
     a: 0.9
   },
   a: 0.9
-}
+};
 
 export default {
   components: {
-    'material-picker': material,
-    'compact-picker': compact,
-    'grayscale-picker': grayscale,
-    'swatches-picker': swatches,
-    'slider-picker': slider,
-    'sketch-picker': sketch,
-    'chrome-picker': chrome,
-    'photoshop-picker': photoshop
+    "material-picker": material,
+    "compact-picker": compact,
+    "grayscale-picker": grayscale,
+    "swatches-picker": swatches,
+    "slider-picker": slider,
+    "sketch-picker": sketch,
+    "chrome-picker": chrome,
+    "photoshop-picker": photoshop
   },
-  data () {
+  data() {
     return {
       colors: defaultProps
-    }
+    };
   },
   computed: {
-    bgc () {
-      return this.colors.hex
+    bgc() {
+      return this.colors.hex;
     }
   },
   methods: {
-    onOk () {
-      console.log('ok')
+    onOk() {
+      console.log("ok");
     },
-    onCancel () {
-      console.log('cancel')
+    onCancel() {
+      console.log("cancel");
     },
-    updateValue (value) {
-      this.colors = value
+    updateValue(value) {
+      this.colors = value;
     }
   },
-  created () {
-  }
-}
+  created() {}
+};
 </script>
 
 <style>
@@ -134,7 +74,7 @@ export default {
   padding: 0;
 }
 html {
-  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
 }
 
 .header-container {

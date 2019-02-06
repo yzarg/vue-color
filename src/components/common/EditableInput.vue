@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'editableInput',
+  name: "editableInput",
   props: {
     label: String,
     labelText: String,
@@ -30,61 +30,63 @@ export default {
   },
   computed: {
     val: {
-      get () {
-        return this.value
+      get() {
+        return this.value;
       },
-      set (v) {
+      set(v) {
         // TODO: min
         if (!(this.max === undefined) && +v > this.max) {
-          this.$refs.input.value = this.max
+          this.$refs.input.value = this.max;
         } else {
-          return v
+          return v;
         }
       }
     },
-    labelId () {
-      return `input__label__${this.label}__${Math.random().toString().slice(2, 5)}`
+    labelId() {
+      return `input__label__${this.label}__${Math.random()
+        .toString()
+        .slice(2, 5)}`;
     },
-    labelSpanText () {
-      return this.labelText || this.label
+    labelSpanText() {
+      return this.labelText || this.label;
     }
   },
   methods: {
-    update (e) {
-      this.handleChange(e.target.value)
+    update(e) {
+      this.handleChange(e.target.value);
     },
-    handleChange (newVal) {
-      let data = {}
-      data[this.label] = newVal
-      if (data.hex === undefined && data['#'] === undefined) {
-        this.$emit('change', data)
+    handleChange(newVal) {
+      let data = {};
+      data[this.label] = newVal;
+      if (data.hex === undefined && data["#"] === undefined) {
+        this.$emit("change", data);
       } else if (newVal.length > 5) {
-        this.$emit('change', data)
+        this.$emit("change", data);
       }
     },
     // **** unused
     // handleBlur (e) {
     //   console.log(e)
     // },
-    handleKeyDown (e) {
-      let val = this.val
-      let number = Number(val)
+    handleKeyDown(e) {
+      let val = this.val;
+      let number = Number(val);
 
       if (number) {
-        let amount = this.arrowOffset || 1
+        let amount = this.arrowOffset || 1;
 
         // Up
         if (e.keyCode === 38) {
-          val = number + amount
-          this.handleChange(val)
-          e.preventDefault()
+          val = number + amount;
+          this.handleChange(val);
+          e.preventDefault();
         }
 
         // Down
         if (e.keyCode === 40) {
-          val = number - amount
-          this.handleChange(val)
-          e.preventDefault()
+          val = number - amount;
+          this.handleChange(val);
+          e.preventDefault();
         }
       }
     }
@@ -96,7 +98,7 @@ export default {
     //   console.log(e)
     // }
   }
-}
+};
 </script>
 
 <style>

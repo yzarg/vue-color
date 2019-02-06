@@ -1,6 +1,6 @@
 {
-  "name": "vue-color",
-  "version": "2.7.0",
+  "name": "vue-color2",
+  "version": "2.7.1",
   "description": "Color of Vue Components",
   "keywords": [
     "color",
@@ -16,9 +16,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiaokaike/vue-color"
+    "url": "https://github.com/dalumiller/vue-color"
   },
-  "author": "xiaokai <kexiaokai@gmail.com>",
+  "author": "luke <dalumiller@gmailc.om>",
   "dependencies": {
     "clamp": "^1.0.1",
     "lodash.throttle": "^4.0.0",
