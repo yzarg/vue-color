@@ -139,7 +139,7 @@ export default {
   },
   data() {
     return {
-      fieldsIndex: 0,
+      fieldsIndex: 3,
       highlight: false
     };
   },

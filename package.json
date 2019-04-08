@@ -12,13 +12,13 @@
     "dev": "node build/dev-server.js",
     "gh": "npm run example && node build/deploy",
     "lint": "eslint --ext .js,.vue src",
-    "release": "npm run lint && webpack --progress --hide-modules --config  ./build/webpack.release.js && webpack --progress --hide-modules --config  ./build/webpack.release.min.js"
+    "release": "webpack --progress --hide-modules --config  ./build/webpack.release.js && webpack --progress --hide-modules --config  ./build/webpack.release.min.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dalumiller/vue-color"
+    "url": "https://github.com/yzarg/vue-color"
   },
-  "author": "luke <dalumiller@gmailc.om>",
+  "author": "younis <younis@baxture.com>",
   "dependencies": {
     "clamp": "^1.0.1",
     "lodash.throttle": "^4.0.0",
